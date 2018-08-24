@@ -33,7 +33,7 @@ endif
 
 # The default values for pre-opting: always preopt PIC.
 # Conditional to building on linux, as dex2oat currently does not work on darwin.
-ifneq ($(HOST_OS),linux)
+ifeq ($(HOST_OS),linux)
   WITH_DEXPREOPT ?= true
   ifeq (eng,$(TARGET_BUILD_VARIANT))
     # Don't strip for quick development turnarounds.
